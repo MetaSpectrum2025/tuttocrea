@@ -22,12 +22,15 @@ Uno stack tipico Canva Pro + InVideo Plus + ElevenLabs Creator + Copy.ai Chat ar
 
 ## Prezzi Tuttocrea (EUR, IVA esclusa in attesa dei dati di fatturazione)
 
-- **Prova 14 giorni**: 3 pacchetti completi, nessuna carta, poi si ferma. Serve a tenere bassi i costi API.
+- **Prova 7 giorni**: 3 pacchetti completi, nessuna carta, poi si ferma. Serve a tenere bassi i costi API. La durata è di una settimana perché Gumroad, scelto per gli abbonamenti, consente al massimo una prova gratuita di 7 giorni (non 14).
 - **Avvio**: 19 €/mese — 12 pacchetti completi (circa 3 a settimana).
 - **Creatore** (consigliato): 39 €/mese — 40 pacchetti, più varianti di thumbnail, voce fino a circa 2 minuti, video HD.
 - **Studio**: 79 €/mese — 100 pacchetti, 2 utenti, voce fino a circa 3 minuti, priorità sulla coda.
 
-I pagamenti non sono live: il sito raccoglie solo richieste di prova o accesso anticipato.
+I pagamenti non sono live: il sito raccoglie solo richieste di prova o accesso anticipato. I membership Gumroad sono già stati creati ma non ancora pubblicati; i pulsanti del sito restano sul modulo di iscrizione. Link futuri (da collegare quando i prodotti saranno pubblici):
+- Avvio: https://marian2607.gumroad.com/l/rduvqo
+- Creatore: https://marian2607.gumroad.com/l/exnss
+- Studio: https://marian2607.gumroad.com/l/drica
 
 ## Costo stimato per pacchetto (API, ordine di grandezza)
 
@@ -45,7 +48,7 @@ Costo prova (3 pacchetti): circa 1–2 €. Se l’utente usa tutto il piano: Av
 
 ## Cosa serve da Marian per andare live
 
-1. **Stripe** (o equivalente UE) intestato a lui, con partita IVA: il sito oggi non prende carte e non deve prenderle finché Stripe non è collegato.
+1. **Gumroad** (membership già creati, ancora non pubblicati) oppure Stripe: pubblicare Avvio, Creatore e Studio e poi sostituire i pulsanti «Accesso anticipato» con i link indicati sopra. Il sito oggi non prende carte.
 2. **Dati partita IVA** (ragione sociale, numero, sede) per fatture, footer e termini. Ha già detto di averla: servono i dettagli prima del primo pagamento, non per questa validazione.
 3. **Conferma dell’email FormSubmit** se arriva una mail di attivazione su balint.marian2607@gmail.com: l’indirizzo era già attivato per hostbot su raw.githack.com, ma un URL nuovo può richiedere una nuova conferma.
 4. **Chiavi API** (testo, immagini, voce) a suo nome, con tetto di spesa mensile, quando si passa dalla demo simulata al prodotto vero.
