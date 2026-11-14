@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Demo — Tuttocrea</title>
+  <meta name="description" content="Demo simulata: un solo argomento, il bot prepara da solo il pacchetto pronto da pubblicare." />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <div class="draft" data-i18n="banner">Questa è una demo simulata: nessun file reale viene generato e non viene presa nessuna carta. Serve a mostrare il flusso intero da un solo argomento.</div>
+  <header>
+    <div class="bar">
+      <a class="logo" href="../index.html">Tutto<span>crea</span></a>
+      <nav>
+        <a href="../index.html#compare" data-i18n="nav_compare">Confronto</a>
+        <a href="../index.html#pricing" data-i18n="nav_pricing">Prezzi</a>
+        <a href="../index.html#prova" data-i18n="nav_cta">Prova 14 giorni</a>
+        <div class="lang">
+          <button type="button" id="btn-it" class="on" onclick="setLang('it')">IT</button>
+          <button type="button" id="btn-en" onclick="setLang('en')">EN</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="section" style="padding-bottom:0">
+    <h1 data-i18n="title">Un argomento. Il bot fa tutto da solo.</h1>
+    <p class="lead" data-i18n="lead">Scrivi un tema, oppure usa l’esempio. Vedrai il flusso completo: idea, script, SEO, thumbnail, voce, video, sottotitoli e calendario. Poi rivedi tu e pubblichi tu: in questa fase il bot non posta sui tuoi account.</p>
+  </section>
+
+  <div class="demo-wrap">
+    <div class="chat">
+      <div class="chat-h" data-i18n="chat_h">Chat con Tuttocrea</div>
+      <div class="msgs" id="msgs"></div>
+      <form class="composer" id="composer">
+        <input id="topic" name="topic" maxlength="140" required />
+        <button class="btn btn-primary" type="submit" id="go" data-i18n="go">Genera il pacchetto</button>
+      </form>
+    </div>
+    <div class="preview">
+      <div class="preview-h" data-i18n="prev_h">Pacchetto pronto da pubblicare</div>
+      <div class="preview-body" id="preview">
+        <p class="waiting" data-i18n="prev_empty">Ancora vuoto. Lancia il flusso e i pezzi appariranno qui, uno dopo l’altro.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p><a href="../index.html#prova" data-i18n="footer_cta">Chiedi la prova di 14 giorni</a> · Tuttocrea · Cosmin Marian Balint</p>
+  </footer>
+
+  <script>
+    const I18N = {
+      it: {
+        banner: "Questa è una demo simulata: nessun file reale viene generato e non viene presa nessuna carta. Serve a mostrare il flusso intero da un solo argomento.",
+        nav_compare: "Confronto",
+        nav_pricing: "Prezzi",
+        nav_cta: "Prova 14 giorni",
+        title: "Un argomento. Il bot fa tutto da solo.",
+        lead: "Scrivi un tema, oppure usa l’esempio. Vedrai il flusso completo: idea, script, SEO, thumbnail, voce, video, sottotitoli e calendario. Poi rivedi tu e pubblichi tu: in questa fase il bot non posta sui tuoi account.",
+        chat_h: "Chat con Tuttocrea",
+        go: "Genera il pacchetto",
+        prev_h: "Pacchetto pronto da pubblicare",
+        prev_empty: "Ancora vuoto. Lancia il flusso e i pezzi appariranno qui, uno dopo l’altro.",
+        footer_cta: "Chiedi la prova di 14 giorni",
+        ph: "Es. 3 errori nel meal prep della domenica",
+        hello: "Ciao. Scrivi solo l’argomento: io preparo da solo il pacchetto pronto da pubblicare. Questa è una simulazione, per farti vedere il flusso intero.",
+        working: "Ricevuto. Preparo il pacchetto completo, senza farti aprire altri tool.",
+        done: "Pacchetto pronto. Puoi rivedere ogni pezzo a destra. Se qualcosa non va, in un piano reale potresti rigenerare solo quel pezzo, nei limiti dei crediti.",
+        busy: "Sto ancora preparando questo pacchetto.",
+        b_idea: "Idea e nicchia",
+        b_script: "Script",
+        b_seo: "Titolo, tag e SEO",
+        b_thumb: "Thumbnail",
+        b_voice: "Voce IA",
+        b_video: "Video",
+        b_cap: "Sottotitoli",
+        b_cal: "Calendario"
+      },
+      en: {
+        banner: "This is a simulated demo: no real files are generated and no card is taken. It shows the full flow from a single topic.",
+        nav_compare: "Compare",
+        nav_pricing: "Pricing",
+        nav_cta: "14-day trial",
+        title: "One topic. The bot does everything on its own.",
+        lead: "Type a theme, or use the example. You will see the full flow: idea, script, SEO, thumbnail, voice, video, captions and schedule. Then you review and you publish: at this stage the bot does not post to your accounts.",
+        chat_h: "Chat with Tuttocrea",
+        go: "Generate the package",
+        prev_h: "Ready-to-publish package",
+        prev_empty: "Still empty. Start the flow and the pieces will appear here, one after another.",
+        footer_cta: "Ask for the 14-day trial",
+        ph: "e.g. 3 mistakes in Sunday meal prep",
+        hello: "Hi. Type only the topic: I will prepare the ready-to-publish package on my own. This is a simulation, so you can see the full flow.",
+        working: "Got it. I am preparing the full package, without asking you to open other tools.",
+        done: "The package is ready. You can review every piece on the right. In a live plan you could regenerate just one piece, within your credit limits.",
+        busy: "I am still preparing this package.",
+        b_idea: "Idea and niche",
+        b_script: "Script",
+        b_seo: "Title, tags and SEO",
+        b_thumb: "Thumbnail",
+        b_voice: "AI voice",
+        b_video: "Video",
+        b_cap: "Captions",
+        b_cal: "Schedule"
+      }
+    };
+
+    let lang = "it";
+    let running = false;
+
+    function t(k) { return (I18N[lang] && I18N[lang][k]) || I18N.it[k] || k; }
+
+    function setLang(next) {
+      lang = next;
+      document.documentElement.lang = next;
+      document.getElementById("btn-en").classList.toggle("on", next === "en");
+      document.getElementById("btn-it").classList.toggle("on", next === "it");
+      document.querySelectorAll("[data-i18n]").forEach((el) => {
+        const k = el.getAttribute("data-i18n");
+        if (I18N[next] && I18N[next][k]) el.textContent = I18N[next][k];
+      });
+      document.getElementById("topic").placeholder = t("ph");
+      if (!document.getElementById("topic").value) {
+        document.getElementById("topic").value = next === "en"
+          ? "3 mistakes in Sunday meal prep"
+          : "3 errori nel meal prep della domenica";
+      }
+      try { localStorage.setItem("tuttocrea-lang", next); } catch (e) {}
+    }
+
+    function addBubble(role, text) {
+      const el = document.createElement("div");
+      el.className = "bubble " + role;
+      el.textContent = text;
+      document.getElementById("msgs").appendChild(el);
+      el.scrollIntoView({ behavior: "smooth", block: "end" });
+    }
+
+    function pack(topic) {
+      const clean = (topic || "").trim().replace(/\s+/g, " ");
+      const en = lang === "en";
+      const title = en
+        ? ("Stop these 3 mistakes: " + clean)
+        : ("Smetti di fare questi 3 errori: " + clean);
+      const shortTitle = clean.length > 42 ? clean.slice(0, 42) + "…" : clean;
+      return {
+        idea: en
+          ? "Format: 35–45 second vertical Reel/Short.\nNiche: home cooking for busy people who batch-cook on Sunday.\nAngle: three concrete mistakes that waste food and time, with a fix for each.\nAudience: beginners who already try meal prep but drop it after a week."
+          : "Formato: Reel/Short verticale da 35–45 secondi.\nNicchia: cucina casalinga per chi ha poco tempo e cucina in anticipo la domenica.\nAngolo: tre errori concreti che fanno sprecare cibo e tempo, con una correzione per ciascuno.\nPubblico: principianti che già provano il meal prep ma lo abbandonano dopo una settimana.",
+        script: en
+          ? "Hook: If your Sunday meal prep never lasts the week, it is usually one of these three mistakes.\n1) You cook five new recipes at once — pick two proteins and one grain, then repeat.\n2) You store everything in one box — sauces stay separate or the food goes soggy by Tuesday.\n3) You skip a 10-minute Wednesday reset — that is when leftovers get a new dressing or become a wrap.\nClose: Save this, try it this Sunday, and tell me which mistake you were making."
+          : "Hook: Se il meal prep della domenica non ti dura la settimana, di solito è uno di questi tre errori.\n1) Cucini cinque ricette nuove insieme: scegli due proteine e un cereale, e li ripeti.\n2) Metti tutto in una sola vaschetta: le salse stanno da parte, altrimenti martedì è già una pappa.\n3) Salti il reset di dieci minuti il mercoledì: è lì che gli avanzi diventano un condimento nuovo o un wrap.\nChiusura: Salva il video, provalo questa domenica e scrivimi quale errore stavi facendo.",
+        seo: en
+          ? "Title: " + title + "\nDescription: A short, practical Reel on " + clean + ". No ranking promise: these tags help people find the topic.\nTags / hashtags: meal prep, Sunday prep, kitchen tips, food waste, busy week, healthy routine, cooking shorts"
+          : "Titolo: " + title + "\nDescrizione: Un Reel breve e pratico su «" + clean + "». Nessuna promessa di posizionamento: i tag servono a far trovare l’argomento.\nTag / hashtag: meal prep, mealprep domenica, consigli cucina, spreco alimentare, settimana organizzata, routine in cucina, reel cucina",
+        thumb: en
+          ? "Thumbnail prompt: close-up of three meal-prep boxes on a wooden table, one soggy, two neat; large typography «3 MISTAKES»; high contrast, readable on a phone.\nSuggested text on image: 3 MISTAKES"
+          : "Prompt thumbnail: primo piano di tre vaschette di meal prep su un tavolo di legno, una scotta e due in ordine; scritta grande «3 ERRORI»; alto contrasto, leggibile sul telefono.\nTesto suggerito sull’immagine: 3 ERRORI",
+        thumbLabel: en ? "3 MISTAKES" : "3 ERRORI",
+        voice: en
+          ? "Voiceover (about 40 seconds), calm and clear, slightly faster on the three points:\n«If your Sunday meal prep never lasts the week, it is usually one of these three mistakes…»\nIn the live product this text becomes an audio track. This demo only shows the words that would be spoken."
+          : "Voce (circa 40 secondi), calma e chiara, un po’ più rapida sui tre punti:\n«Se il meal prep della domenica non ti dura la settimana, di solito è uno di questi tre errori…»\nNel prodotto vero questo testo diventa una traccia audio. In demo vedi solo le parole che verrebbero lette.",
+        video: en
+          ? "Video at launch: a 16:9 or 9:16 slideshow (about 40 seconds) with 6 stills, the voice track and burned-in captions. Not a cinematic generative film.\nShot list: 1 hook title, 2 mistake 1, 3 fix 1, 4 mistake 2, 5 mistake 3, 6 close and on-screen save prompt."
+          : "Video al lancio: slideshow 9:16 o 16:9 (circa 40 secondi) con 6 immagini, la traccia vocale e i sottotitoli incorporati. Non è un film generativo da studio.\nScaletta visiva: 1 titolo hook, 2 errore 1, 3 correzione 1, 4 errore 2, 5 errore 3, 6 chiusura e invito a salvare.",
+        cap: en
+          ? "00:00 If your Sunday meal prep never lasts the week\n00:04 it is usually one of these three mistakes.\n00:08 One: you cook five new recipes at once.\n00:14 Two: everything goes in one box — sauces stay separate.\n00:22 Three: you skip a 10-minute Wednesday reset.\n00:30 Save this and try it this Sunday."
+          : "00:00 Se il meal prep della domenica non ti dura la settimana\n00:04 di solito è uno di questi tre errori.\n00:08 Uno: cucini cinque ricette nuove insieme.\n00:14 Due: metti tutto in una vaschetta — le salse stanno da parte.\n00:22 Tre: salti il reset di dieci minuti il mercoledì.\n00:30 Salva il video e provalo questa domenica.",
+        cal: en
+          ? "Suggested plan (you post it yourself):\n• Tuesday 18:30 — this Reel, with the title above.\n• Thursday 12:00 — a 15-second reminder cut, same hook.\n• Next Sunday 09:00 — a follow-up: “here is my 2-protein list”.\nTuttocrea does not log into your accounts or publish for you."
+          : "Piano suggerito (pubblichi tu):\n• Martedì 18:30 — questo Reel, con il titolo qui sopra.\n• Giovedì 12:00 — un taglio da 15 secondi, stesso hook.\n• Domenica successiva 09:00 — un seguito: «ecco la mia lista da 2 proteine».\nTuttocrea non entra nei tuoi account e non pubblica al posto tuo.",
+        shortTitle: shortTitle
+      };
+    }
+
+    function block(id, title, html) {
+      const wrap = document.createElement("div");
+      wrap.className = "block";
+      wrap.id = id;
+      wrap.innerHTML = "<h3></h3><div class='body'></div>";
+      wrap.querySelector("h3").textContent = title;
+      wrap.querySelector(".body").innerHTML = html;
+      return wrap;
+    }
+
+    function esc(s) {
+      return String(s).replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]));
+    }
+
+    function para(s) {
+      return "<p>" + esc(s).replace(/\n/g, "<br>") + "</p>";
+    }
+
+    async function run(topic) {
+      if (running) { addBubble("sys", t("busy")); return; }
+      running = true;
+      document.getElementById("go").disabled = true;
+      addBubble("user", topic);
+      addBubble("bot", t("working"));
+      const preview = document.getElementById("preview");
+      preview.innerHTML = "";
+      const data = pack(topic);
+      const steps = [
+        ["idea", t("b_idea"), para(data.idea)],
+        ["script", t("b_script"), para(data.script)],
+        ["seo", t("b_seo"), para(data.seo)],
+        ["thumb", t("b_thumb"), "<div class='thumb'></div>" + para(data.thumb)],
+        ["voice", t("b_voice"), para(data.voice)],
+        ["video", t("b_video"), para(data.video)],
+        ["cap", t("b_cap"), para(data.cap)],
+        ["cal", t("b_cal"), para(data.cal)]
+      ];
+      for (const [id, title, html] of steps) {
+        await new Promise((r) => setTimeout(r, 700));
+        const el = block(id, title, html);
+        preview.appendChild(el);
+        if (id === "thumb") el.querySelector(".thumb").textContent = data.thumbLabel;
+        el.scrollIntoView({ behavior: "smooth", block: "end" });
+        addBubble("bot", (lang === "en" ? "Added: " : "Aggiunto: ") + title + ".");
+      }
+      addBubble("bot", t("done"));
+      running = false;
+      document.getElementById("go").disabled = false;
+    }
+
+    document.getElementById("composer").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const v = document.getElementById("topic").value.trim();
+      if (v) run(v);
+    });
+
+    (function init() {
+      const saved = (() => { try { return localStorage.getItem("tuttocrea-lang"); } catch (e) { return null; } })();
+      setLang(saved === "en" ? "en" : "it");
+      addBubble("bot", t("hello"));
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tuttocrea — Un argomento, il pacchetto pronto da pubblicare</title>
+  <meta name="description" content="Un unico bot IA: scrivi solo l'argomento e ottieni idea, script, SEO, thumbnail, voce, video, sottotitoli e calendario. Prova 14 giorni con crediti limitati. Pagamenti non ancora attivi." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="draft" data-i18n="banner">Sito di validazione. I pagamenti non sono attivi: puoi chiedere la prova di 14 giorni o l’accesso anticipato. Non chiediamo dati della carta.</div>
+  <header>
+    <div class="bar">
+      <a class="logo" href="index.html">Tutto<span>crea</span></a>
+      <nav>
+        <a class="hide-sm" href="#how" data-i18n="nav_how">Come funziona</a>
+        <a class="hide-sm" href="#compare" data-i18n="nav_compare">Confronto</a>
+        <a class="hide-sm" href="#pricing" data-i18n="nav_pricing">Prezzi</a>
+        <a href="demo/index.html" data-i18n="nav_demo">Demo</a>
+        <a class="hide-sm" href="#faq" data-i18n="nav_faq">FAQ</a>
+        <div class="lang">
+          <button type="button" id="btn-it" class="on" onclick="setLang('it')">IT</button>
+          <button type="button" id="btn-en" onclick="setLang('en')">EN</button>
+        </div>
+        <a class="btn btn-primary" href="#prova" data-i18n="nav_cta">Prova 14 giorni</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div>
+      <h1 data-i18n="hero_title">Scrivi solo l’argomento. Il bot fa tutto il resto.</h1>
+      <p class="lead" data-i18n="hero_lead">Un unico bot, un clic: ricevi il pacchetto pronto da pubblicare — idea e nicchia, script, titolo e tag SEO, thumbnail, voce IA, video, sottotitoli e calendario. Non devi saltare da Canva a Jasper, da InVideo a ElevenLabs: i pezzi arrivano già messi insieme.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="#prova" data-i18n="cta_trial">Inizia la prova di 14 giorni</a>
+        <a class="btn btn-ghost" href="demo/index.html" data-i18n="cta_demo">Guarda la demo del flusso intero</a>
+      </div>
+      <p class="fine" data-i18n="hero_fine">Prova gratuita 14 giorni, con un tetto di 3 pacchetti completi, senza carta. Poi Avvio 19 €, Creatore 39 € o Studio 79 € al mese. I pagamenti partiranno solo dopo l’accesso anticipato.</p>
+      <p class="fine" data-i18n="hero_honest">Onesti sui limiti: al lancio il video è un montaggio slideshow o un testo-video breve, non un film da studio. Il calendario è un piano di pubblicazione: non colleghiamo i tuoi account e non postiamo al posto tuo. Non promettiamo visualizzazioni né guadagni. Tu rivedi e pubblichi.</p>
+    </div>
+    <aside class="hero-card">
+      <h2 data-i18n="hero_card_title">Cosa esce da un solo argomento</h2>
+      <ol class="pack-list">
+        <li><b>1</b> <span data-i18n="p1">Nicchia e idea del contenuto</span></li>
+        <li><b>2</b> <span data-i18n="p2">Script e copy pronti da leggere</span></li>
+        <li><b>3</b> <span data-i18n="p3">Titolo, descrizione e tag SEO</span></li>
+        <li><b>4</b> <span data-i18n="p4">Thumbnail e prompt del banner</span></li>
+        <li><b>5</b> <span data-i18n="p5">Testo e traccia della voce IA</span></li>
+        <li><b>6</b> <span data-i18n="p6">Video montato (slideshow / testo-video)</span></li>
+        <li><b>7</b> <span data-i18n="p7">Sottotitoli</span></li>
+        <li><b>8</b> <span data-i18n="p8">Calendario di pubblicazione</span></li>
+      </ol>
+    </aside>
+  </section>
+
+  <section class="section" id="how">
+    <h2 data-i18n="how_title">Tre passi. Tu ne fai uno.</h2>
+    <p class="lead" data-i18n="how_lead">Il lavoro lo fa il bot. Tu scegli l’argomento e, alla fine, controlli il pacchetto prima di pubblicarlo.</p>
+    <div class="steps">
+      <div><strong data-i18n="how1_k">1. Scrivi l’argomento</strong><p data-i18n="how1_v">Una frase basta: il tema, la piattaforma (YouTube, Instagram o TikTok) e, se vuoi, la lingua.</p></div>
+      <div><strong data-i18n="how2_k">2. Il bot lavora da solo</strong><p data-i18n="how2_v">In un unico flusso costruisce idea, script, SEO, thumbnail, voce, video, sottotitoli e calendario. Non devi aprire altri tool né incollare i pezzi.</p></div>
+      <div><strong data-i18n="how3_k">3. Rivedi e pubblica</strong><p data-i18n="how3_v">Scarichi i file e posti tu quando vuoi. Se qualcosa non va, rigeneri quel pezzo nei limiti del piano.</p></div>
+    </div>
+  </section>
+
+  <section class="section" id="features">
+    <h2 data-i18n="feat_title">Tutto insieme, non un pezzo alla volta</h2>
+    <div class="grid">
+      <article class="card"><h3 data-i18n="f1_t">Idee e nicchie</h3><p data-i18n="f1_p">Il bot propone l’angolo, il pubblico e il formato (Short, Reel o video orizzontale) a partire dal tema che hai scritto.</p></article>
+      <article class="card"><h3 data-i18n="f2_t">Script e copy</h3><p data-i18n="f2_p">Hook, corpo, chiusura e testo per la descrizione, già tagliati sulla durata scelta.</p></article>
+      <article class="card"><h3 data-i18n="f3_t">SEO, titoli e tag</h3><p data-i18n="f3_p">Titoli, parole chiave e hashtag utili per YouTube, Instagram o TikTok, senza garanzia di posizionamento.</p></article>
+      <article class="card"><h3 data-i18n="f4_t">Thumbnail e banner</h3><p data-i18n="f4_p">Immagine di copertina e prompt del banner, pensati per quel titolo. Non sostituiamo la libreria di template di Canva.</p></article>
+      <article class="card"><h3 data-i18n="f5_t">Voce IA</h3><p data-i18n="f5_p">Una traccia parlata dello script. Puntamo a una voce chiara; non diciamo di battere i cloni professionali di ElevenLabs.</p></article>
+      <article class="card"><h3 data-i18n="f6_t">Video e sottotitoli</h3><p data-i18n="f6_p">Montaggio con immagini, voce e didascalie. Al lancio è slideshow o testo-video breve, non un modello cinematografico da studio.</p></article>
+    </div>
+  </section>
+
+  <section class="section" id="compare">
+    <h2 data-i18n="cmp_title">Perché un unico bot, invece di cinque abbonamenti</h2>
+    <p class="lead" data-i18n="cmp_lead">Il punto non è «siamo i migliori su ogni singolo pezzo». Canva resta più ricco di template, InVideo è più avanti sul video generativo, ElevenLabs sulla voce, Jasper e Copy.ai sulla copy da marketing. Il punto è un altro: loro fanno un pezzo; Tuttocrea consegna il pacchetto intero da un solo argomento, a un prezzo unico.</p>
+    <div class="table-wrap">
+      <table class="compare">
+        <thead>
+          <tr>
+            <th data-i18n="c0">Cosa fa</th>
+            <th class="hl">Tuttocrea</th>
+            <th>Canva Pro</th>
+            <th>Jasper / Copy.ai</th>
+            <th>InVideo</th>
+            <th>ElevenLabs</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-i18n="c1">Pacchetto completo da un solo argomento, in un clic</td>
+            <td class="hl yes" data-i18n="c1a">Sì: è il prodotto</td>
+            <td class="no" data-i18n="c1b">No: è un editor di design</td>
+            <td class="no" data-i18n="c1c">No: è scrittura</td>
+            <td class="no" data-i18n="c1d">No: è soprattutto video</td>
+            <td class="no" data-i18n="c1e">No: è voce</td>
+          </tr>
+          <tr>
+            <td data-i18n="c2">Idea e nicchia</td>
+            <td class="hl yes" data-i18n="yes">Sì</td>
+            <td class="no" data-i18n="no">No</td>
+            <td class="partial" data-i18n="c2c">Parziale (testi e idee)</td>
+            <td class="partial" data-i18n="c2d">Parziale (prompt del video)</td>
+            <td class="no" data-i18n="no">No</td>
+          </tr>
+          <tr>
+            <td data-i18n="c3">Script e copy</td>
+            <td class="hl yes" data-i18n="yes">Sì</td>
+            <td class="partial" data-i18n="c3b">Parziale (Magic Write)</td>
+            <td class="yes" data-i18n="c3c">Sì: è il loro mestiere</td>
+            <td class="partial" data-i18n="c3d">Script legato al video</td>
+            <td class="no" data-i18n="no">No</td>
+          </tr>
+          <tr>
+            <td data-i18n="c4">Titolo, tag e SEO</td>
+            <td class="hl yes" data-i18n="yes">Sì</td>
+            <td class="no" data-i18n="no_lim">No / limitato</td>
+            <td class="partial" data-i18n="partial">Parziale</td>
+            <td class="no" data-i18n="no">No</td>
+            <td class="no" data-i18n="no">No</td>
+          </tr>
+          <tr>
+            <td data-i18n="c5">Thumbnail e banner</td>
+            <td class="hl yes" data-i18n="c5a">Sì, generazione per quel titolo</td>
+            <td class="yes" data-i18n="c5b">Sì, editor e libreria più maturi</td>
+            <td class="partial" data-i18n="c5c">Jasper ha immagini; Copy.ai no da solo</td>
+            <td class="partial" data-i18n="c5d">Immagini nel flusso video</td>
+            <td class="no" data-i18n="no">No</td>
+          </tr>
+          <tr>
+            <td data-i18n="c6">Voce IA</td>
+            <td class="hl yes" data-i18n="c6a">Sì, sullo script</td>
+            <td class="partial" data-i18n="c6b">Audio di stock, non voce da script</td>
+            <td class="no" data-i18n="no">No</td>
+            <td class="yes" data-i18n="c6d">Sì, nel video</td>
+            <td class="yes" data-i18n="c6e">Sì, qualità di riferimento</td>
+          </tr>
+          <tr>
+            <td data-i18n="c7">Video</td>
+            <td class="hl partial" data-i18n="c7a">Sì, slideshow / testo-video al lancio</td>
+            <td class="partial" data-i18n="c7b">Template video, non un flusso unico da un tema</td>
+            <td class="no" data-i18n="no">No</td>
+            <td class="yes" data-i18n="c7d">Sì, più avanzato sul solo video</td>
+            <td class="no" data-i18n="no">No</td>
+          </tr>
+          <tr>
+            <td data-i18n="c8">Sottotitoli</td>
+            <td class="hl yes" data-i18n="yes">Sì</td>
+            <td class="partial" data-i18n="partial">Parziale</td>
+            <td class="no" data-i18n="no">No</td>
+            <td class="yes" data-i18n="yes">Sì</td>
+            <td class="no" data-i18n="no">No</td>
+          </tr>
+          <tr>
+            <td data-i18n="c9">Calendario di pubblicazione</td>
+            <td class="hl yes" data-i18n="c9a">Piano editoriale (non pubblica da solo)</td>
+            <td class="partial" data-i18n="c9b">Ha lo scheduling social</td>
+            <td class="no" data-i18n="no">No</td>
+            <td class="no" data-i18n="no">No</td>
+            <td class="no" data-i18n="no">No</td>
+          </tr>
+          <tr>
+            <td data-i18n="c10">Prezzo mensile indicativo (nov 2026)</td>
+            <td class="hl" data-i18n="c10a">19 / 39 / 79 €</td>
+            <td data-i18n="c10b">12 €/mese in UE, o 110 €/anno</td>
+            <td data-i18n="c10c">Jasper 69 $/mese; Copy.ai Chat 29 $/mese</td>
+            <td data-i18n="c10d">Starter 20 $/mese (10 $ se annuale); Plus 60 $ (30 $ annuale)</td>
+            <td data-i18n="c10e">Creator 22 $/mese (18,33 $ se annuale)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="source" data-i18n="cmp_src">Prezzi letti a novembre 2026: Canva Pro in euro da fonti che citano la pagina tedesca (la pagina ufficiale US mostra 144 USD/anno); Jasper da jasper.ai/pricing; Copy.ai da copy.ai/prices; InVideo da invideo.io/pricing; ElevenLabs da elevenlabs.io/pricing. I listini cambiano e possono avere IVA diversa al pagamento.</p>
+  </section>
+
+  <section class="section" id="pricing">
+    <h2 data-i18n="pr_title">Prova 14 giorni, poi un piano al mese</h2>
+    <p class="lead" data-i18n="pr_lead">I tetti di crediti ci sono per tenere sotto controllo i costi di generazione (testo, immagini, voce e video). Finiti i pacchetti del piano, si aspetta il mese successivo oppure si sale di piano. IVA esclusa, da indicare in fattura quando i pagamenti saranno attivi.</p>
+    <div class="prices">
+      <article class="price">
+        <div class="tag" data-i18n="pr_trial_tag">Prova</div>
+        <h3 data-i18n="pr_trial_h">14 giorni</h3>
+        <div class="amount">0 € <small data-i18n="pr_trial_s">senza carta</small></div>
+        <ul>
+          <li data-i18n="pr_t1">3 pacchetti completi in 14 giorni</li>
+          <li data-i18n="pr_t2">Tutti i pezzi del flusso, con i limiti di lancio sul video</li>
+          <li data-i18n="pr_t3">Poi si ferma: niente addebito automatico</li>
+        </ul>
+        <a class="btn btn-ghost" href="#prova" data-i18n="pr_t_cta">Chiedi la prova</a>
+      </article>
+      <article class="price">
+        <h3 data-i18n="pr_a_h">Avvio</h3>
+        <div class="amount">19 € <small data-i18n="per_mo">/ mese</small></div>
+        <ul>
+          <li data-i18n="pr_a1">12 pacchetti completi al mese</li>
+          <li data-i18n="pr_a2">Voce fino a circa 90 secondi</li>
+          <li data-i18n="pr_a3">1 utente</li>
+        </ul>
+        <a class="btn btn-ghost" href="#prova" data-i18n="pr_a_cta">Accesso anticipato</a>
+      </article>
+      <article class="price featured">
+        <div class="tag" data-i18n="pr_c_tag">Consigliato</div>
+        <h3 data-i18n="pr_c_h">Creatore</h3>
+        <div class="amount">39 € <small data-i18n="per_mo">/ mese</small></div>
+        <ul>
+          <li data-i18n="pr_c1">40 pacchetti completi al mese</li>
+          <li data-i18n="pr_c2">Più varianti di thumbnail, voce fino a circa 2 minuti, video HD</li>
+          <li data-i18n="pr_c3">1 utente</li>
+        </ul>
+        <a class="btn btn-primary" href="#prova" data-i18n="pr_c_cta">Accesso anticipato</a>
+      </article>
+    </div>
+    <article class="price" style="max-width:360px;margin:8px 0 24px">
+      <h3 data-i18n="pr_s_h">Studio</h3>
+      <div class="amount">79 € <small data-i18n="per_mo">/ mese</small></div>
+      <ul>
+        <li data-i18n="pr_s1">100 pacchetti completi al mese</li>
+        <li data-i18n="pr_s2">2 utenti, voce fino a circa 3 minuti, priorità in coda</li>
+        <li data-i18n="pr_s3">Stesso flusso unico, più volume</li>
+      </ul>
+      <a class="btn btn-ghost" href="#prova" data-i18n="pr_s_cta">Accesso anticipato</a>
+    </article>
+    <p class="fine" data-i18n="pr_note">Un creatore che oggi paga Canva, un tool di copy, InVideo ed ElevenLabs insieme arriva spesso oltre 80–110 € al mese, e deve comunque unire i pezzi a mano. Tuttocrea costa meno di quello stack e consegna il pacchetto già assemblato, con i limiti dichiarati sopra.</p>
+  </section>
+
+  <section class="section" id="prova">
+    <h2 data-i18n="form_title">Chiedi la prova o l’accesso anticipato</h2>
+    <form class="proposal" id="proposal-form" action="https://formsubmit.co/balint.marian2607@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="Tuttocrea — prova o accesso anticipato" />
+      <input type="hidden" name="_template" value="table" />
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+      <input type="hidden" name="_next" id="form-next" value="" />
+      <p class="fine" data-i18n="form_intro">Il modulo arriva a Cosmin Marian Balint. Non chiedere una carta: i pagamenti non sono attivi. Se è la prima volta che FormSubmit riceve un invio da questo indirizzo del sito, può arrivare una mail di attivazione su balint.marian2607@gmail.com (anche in Spam): va confermata una volta.</p>
+      <label for="name" data-i18n="label_name">Nome</label>
+      <input id="name" name="name" autocomplete="name" required />
+      <label for="email" data-i18n="label_email">Email</label>
+      <input id="email" name="email" type="email" autocomplete="email" required />
+      <label for="platform" data-i18n="label_platform">Piattaforma principale</label>
+      <select id="platform" name="platform">
+        <option>YouTube</option>
+        <option>Instagram</option>
+        <option>TikTok</option>
+        <option data-i18n="opt_other">Altro</option>
+      </select>
+      <label for="plan" data-i18n="label_plan">Cosa ti interessa</label>
+      <select id="plan" name="plan">
+        <option data-i18n="opt_trial">Prova 14 giorni (3 pacchetti)</option>
+        <option data-i18n="opt_avvio">Avvio 19 €</option>
+        <option selected data-i18n="opt_creatore">Creatore 39 €</option>
+        <option data-i18n="opt_studio">Studio 79 €</option>
+      </select>
+      <label for="topic" data-i18n="label_topic">Un argomento che vorresti far preparare al bot</label>
+      <input id="topic" name="topic" />
+      <label for="msg" data-i18n="label_msg">Note (facoltative)</label>
+      <textarea id="msg" name="message" rows="4"></textarea>
+      <p><button class="btn btn-primary" type="submit" data-i18n="form_submit">Invia la richiesta</button></p>
+      <p class="fine"><a href="mailto:balint.marian2607@gmail.com?subject=Tuttocrea%20prova%2014%20giorni" data-i18n="mailto_link">Oppure scrivi direttamente a Cosmin Marian Balint</a></p>
+      <div id="form-note" data-i18n="form_note"></div>
+    </form>
+  </section>
+
+  <section class="section" id="faq">
+    <h2 data-i18n="faq_title">Domande frequenti</h2>
+    <details open>
+      <summary data-i18n="faq1_q">È già un’app completa, o un sito per capire se serve?</summary>
+      <p data-i18n="faq1_a">Questa è una landing di validazione, con una demo simulata del flusso. Il prodotto vero, con generazione reale e abbonamento, parte se arrivano richieste serie. Non fingiamo utenti, recensioni o numeri di fatturato.</p>
+    </details>
+    <details>
+      <summary data-i18n="faq2_q">La prova è davvero gratis? Perché è limitata?</summary>
+      <p data-i18n="faq2_a">Sì, 14 giorni e 3 pacchetti completi, senza carta. Il tetto esiste perché ogni pacchetto consuma API di testo, immagini e voce: senza limite i costi salirebbero subito. Finiti i 3 pacchetti o i 14 giorni, la prova si ferma.</p>
+    </details>
+    <details>
+      <summary data-i18n="faq3_q">Fate video come InVideo o voci come ElevenLabs?</summary>
+      <p data-i18n="faq3_a">No, e non lo scriviamo. Al lancio il video è un montaggio (slideshow o testo-video breve) con voce e sottotitoli. La voce è chiara e legata allo script, non un clone professionale da studio. Il vantaggio è il flusso unico, non battere quei specialisti sul loro pezzo.</p>
+    </details>
+    <details>
+      <summary data-i18n="faq4_q">Pubblicate voi sui miei account?</summary>
+      <p data-i18n="faq4_a">No. Il bot prepara un calendario e i file pronti. Per pubblicare dai tuoi profili servono le API ufficiali e il tuo consenso: non è incluso in questa fase.</p>
+    </details>
+    <details>
+      <summary data-i18n="faq5_q">Quando parto a pagare?</summary>
+      <p data-i18n="faq5_a">I pagamenti non sono attivi. Se lasci la mail, ti scriviamo per la prova o per l’accesso anticipato. La carta servirà solo quando Stripe sarà collegato, con fattura e partita IVA.</p>
+    </details>
+    <details>
+      <summary data-i18n="faq6_q">Chi c’è dietro?</summary>
+      <p data-i18n="faq6_a">Cosmin Marian Balint, in Italia, con partita IVA già attiva. I dati di fatturazione completi saranno in fattura e nel footer prima del primo pagamento.</p>
+    </details>
+  </section>
+
+  <footer>
+    <p data-i18n="footer">Tuttocrea · Cosmin Marian Balint · Servizio online, con sede in Italia. Email: balint.marian2607@gmail.com. I pagamenti non sono attivi. Nessuna recensione o numero di utenti inventato.</p>
+  </footer>
+
+  <script>
+    const I18N = {
+      it: {},
+      en: {
+        banner: "Validation site. Payments are not live: you can ask for the 14-day trial or early access. We never ask for card details.",
+        nav_how: "How it works",
+        nav_compare: "Compare",
+        nav_pricing: "Pricing",
+        nav_demo: "Demo",
+        nav_faq: "FAQ",
+        nav_cta: "14-day trial",
+        hero_title: "Type only the topic. The bot does the rest.",
+        hero_lead: "One bot, one click: you get a ready-to-publish package — idea and niche, script, SEO title and tags, thumbnail, AI voice, video, captions and a posting schedule. No hopping from Canva to Jasper, InVideo or ElevenLabs: the pieces arrive already assembled.",
+        cta_trial: "Start the 14-day trial",
+        cta_demo: "Watch the full-flow demo",
+        hero_fine: "Free 14-day trial, capped at 3 complete packages, no card. Then Avvio at €19, Creatore at €39 or Studio at €79 a month. Payments start only after early access.",
+        hero_honest: "Honest limits: at launch the video is a slideshow or short text-to-video, not a studio film. The calendar is a posting plan — we do not connect your accounts or post for you. We do not promise views or income. You review and publish.",
+        hero_card_title: "What one topic produces",
+        p1: "Niche and content idea",
+        p2: "Script and copy ready to read",
+        p3: "SEO title, description and tags",
+        p4: "Thumbnail and banner prompt",
+        p5: "AI voiceover script and track",
+        p6: "Edited video (slideshow / text-to-video)",
+        p7: "Captions",
+        p8: "Posting schedule",
+        how_title: "Three steps. You do one.",
+        how_lead: "The bot does the work. You pick the topic and, at the end, review the package before you publish.",
+        how1_k: "1. Type the topic",
+        how1_v: "One sentence is enough: the theme, the platform (YouTube, Instagram or TikTok) and, if you want, the language.",
+        how2_k: "2. The bot works on its own",
+        how2_v: "In one flow it builds the idea, script, SEO, thumbnail, voice, video, captions and schedule. You do not open other tools or paste the pieces together.",
+        how3_k: "3. Review and publish",
+        how3_v: "You download the files and post when you want. If something is off, you regenerate that piece within your plan limits.",
+        feat_title: "Everything together, not one piece at a time",
+        f1_t: "Ideas and niches",
+        f1_p: "The bot proposes the angle, the audience and the format (Short, Reel or landscape) from the topic you typed.",
+        f2_t: "Script and copy",
+        f2_p: "Hook, body, close and description copy, already cut to the length you chose.",
+        f3_t: "SEO, titles and tags",
+        f3_p: "Titles, keywords and hashtags useful for YouTube, Instagram or TikTok, with no ranking promise.",
+        f4_t: "Thumbnails and banners",
+        f4_p: "A cover image and a banner prompt, built for that title. We do not replace Canva’s template library.",
+        f5_t: "AI voice",
+        f5_p: "A spoken track of the script. We aim for a clear voice; we do not claim to beat ElevenLabs professional clones.",
+        f6_t: "Video and captions",
+        f6_p: "An edit with images, voice and captions. At launch this is a slideshow or short text-to-video, not a cinematic studio model.",
+        cmp_title: "Why one bot, instead of five subscriptions",
+        cmp_lead: "The point is not “we are the best at every single piece”. Canva still has a richer template library, InVideo is ahead on generative video, ElevenLabs on voice, Jasper and Copy.ai on marketing copy. The point is this: they each do one piece; Tuttocrea delivers the full package from a single topic, at one price.",
+        c0: "What it does",
+        c1: "Full package from one topic, in one click",
+        c1a: "Yes: that is the product",
+        c1b: "No: it is a design editor",
+        c1c: "No: it is writing",
+        c1d: "No: it is mostly video",
+        c1e: "No: it is voice",
+        c2: "Idea and niche",
+        yes: "Yes",
+        no: "No",
+        no_lim: "No / limited",
+        partial: "Partial",
+        c2c: "Partial (copy and ideas)",
+        c2d: "Partial (video prompt)",
+        c3: "Script and copy",
+        c3b: "Partial (Magic Write)",
+        c3c: "Yes: that is their craft",
+        c3d: "Script tied to the video",
+        c4: "Title, tags and SEO",
+        c5: "Thumbnail and banner",
+        c5a: "Yes, generated for that title",
+        c5b: "Yes, a more mature editor and library",
+        c5c: "Jasper has images; Copy.ai does not on its own",
+        c5d: "Images in the video flow",
+        c6: "AI voice",
+        c6a: "Yes, on the script",
+        c6b: "Stock audio, not script voiceover",
+        c6d: "Yes, in the video",
+        c6e: "Yes, the reference quality",
+        c7: "Video",
+        c7a: "Yes, slideshow / text-to-video at launch",
+        c7b: "Video templates, not a one-topic end-to-end flow",
+        c7d: "Yes, stronger on video alone",
+        c8: "Captions",
+        c9: "Posting schedule",
+        c9a: "Editorial plan (it does not post by itself)",
+        c9b: "Has social scheduling",
+        c10: "Indicative monthly price (Nov 2026)",
+        c10a: "€19 / €39 / €79",
+        c10b: "€12/month in the EU, or €110/year",
+        c10c: "Jasper $69/month; Copy.ai Chat $29/month",
+        c10d: "Starter $20/month ($10 yearly); Plus $60 ($30 yearly)",
+        c10e: "Creator $22/month ($18.33 yearly)",
+        cmp_src: "Prices checked in November 2026: Canva Pro in euro from sources citing the German page (the official US page shows $144/year); Jasper from jasper.ai/pricing; Copy.ai from copy.ai/prices; InVideo from invideo.io/pricing; ElevenLabs from elevenlabs.io/pricing. Lists change and tax at checkout can differ.",
+        pr_title: "A 14-day trial, then a monthly plan",
+        pr_lead: "Credit caps exist so generation costs (text, images, voice and video) stay under control. When a plan’s packages run out, you wait for the next month or move up. Prices exclude VAT, which will appear on invoices once payments are live.",
+        pr_trial_tag: "Trial",
+        pr_trial_h: "14 days",
+        pr_trial_s: "no card",
+        pr_t1: "3 complete packages in 14 days",
+        pr_t2: "Every piece of the flow, with the launch limits on video",
+        pr_t3: "Then it stops: no automatic charge",
+        pr_t_cta: "Ask for the trial",
+        pr_a_h: "Avvio",
+        per_mo: "/ month",
+        pr_a1: "12 complete packages a month",
+        pr_a2: "Voice up to about 90 seconds",
+        pr_a3: "1 user",
+        pr_a_cta: "Early access",
+        pr_c_tag: "Suggested",
+        pr_c_h: "Creatore",
+        pr_c1: "40 complete packages a month",
+        pr_c2: "More thumbnail variants, voice up to about 2 minutes, HD video",
+        pr_c3: "1 user",
+        pr_c_cta: "Early access",
+        pr_s_h: "Studio",
+        pr_s1: "100 complete packages a month",
+        pr_s2: "2 users, voice up to about 3 minutes, queue priority",
+        pr_s3: "The same single flow, more volume",
+        pr_s_cta: "Early access",
+        pr_note: "A creator who today pays for Canva, a copy tool, InVideo and ElevenLabs together often spends more than €80–110 a month, and still has to assemble the pieces by hand. Tuttocrea costs less than that stack and delivers the package already assembled, with the limits stated above.",
+        form_title: "Ask for the trial or early access",
+        form_intro: "The form goes to Cosmin Marian Balint. Do not send a card: payments are not live. If this is the first FormSubmit message from this site address, an activation email may arrive at balint.marian2607@gmail.com (check Spam too): it only needs confirming once.",
+        label_name: "Name",
+        label_email: "Email",
+        label_platform: "Main platform",
+        opt_other: "Other",
+        label_plan: "What you want",
+        opt_trial: "14-day trial (3 packages)",
+        opt_avvio: "Avvio €19",
+        opt_creatore: "Creatore €39",
+        opt_studio: "Studio €79",
+        label_topic: "A topic you would like the bot to prepare",
+        label_msg: "Notes (optional)",
+        form_submit: "Send the request",
+        mailto_link: "Or email Cosmin Marian Balint directly",
+        form_note: "",
+        faq_title: "Frequently asked questions",
+        faq1_q: "Is this already a full app, or a site to see if people want it?",
+        faq1_a: "This is a validation landing, with a simulated demo of the flow. The real product, with live generation and a subscription, starts if serious requests arrive. We do not invent users, reviews or revenue figures.",
+        faq2_q: "Is the trial really free? Why is it capped?",
+        faq2_a: "Yes: 14 days and 3 complete packages, no card. The cap exists because each package uses text, image and voice APIs: without a limit, costs would rise immediately. When the 3 packages or the 14 days end, the trial stops.",
+        faq3_q: "Do you make video like InVideo or voices like ElevenLabs?",
+        faq3_a: "No, and we do not claim that. At launch the video is an edit (slideshow or short text-to-video) with voice and captions. The voice is clear and tied to the script, not a professional studio clone. The advantage is the single flow, not beating those specialists at their own piece.",
+        faq4_q: "Will you post on my accounts?",
+        faq4_a: "No. The bot prepares a schedule and ready files. Posting to your profiles needs official APIs and your consent: that is not included at this stage.",
+        faq5_q: "When do I start paying?",
+        faq5_a: "Payments are not live. If you leave your email, we will write about the trial or early access. A card will only be needed once Stripe is connected, with an invoice and VAT details.",
+        faq6_q: "Who is behind this?",
+        faq6_a: "Cosmin Marian Balint, in Italy, with an already active VAT number (partita IVA). Full billing details will appear on invoices and in the footer before the first payment.",
+        footer: "Tuttocrea · Cosmin Marian Balint · Online service, based in Italy. Email: balint.marian2607@gmail.com. Payments are not live. No invented reviews or user counts."
+      }
+    };
+
+    function setLang(lang) {
+      document.documentElement.lang = lang;
+      document.getElementById("btn-en").classList.toggle("on", lang === "en");
+      document.getElementById("btn-it").classList.toggle("on", lang === "it");
+      document.querySelectorAll("[data-i18n]").forEach((el) => {
+        const k = el.getAttribute("data-i18n");
+        const pack = I18N[lang] || {};
+        if (pack[k]) el.textContent = pack[k];
+      });
+      try { localStorage.setItem("tuttocrea-lang", lang); } catch (e) {}
+    }
+
+    (function () {
+      const next = document.getElementById("form-next");
+      if (next) next.value = new URL("thanks.html", window.location.href).href;
+      const saved = (() => { try { return localStorage.getItem("tuttocrea-lang"); } catch (e) { return null; } })();
+      if (saved === "en") setLang("en");
+    })();
+  </script>
+</body>
+</html>
